@@ -13,11 +13,11 @@ angular.module('digotalesApp', [
         controller: 'MainCtrl'
       })
       .when('/stories', {
-        templateUrl: 'views/stories/index.html',
+        templateUrl: 'views/stories/story-list.html',
         controller: 'StoryListCtrl'
       })
       .when('/stories/:storyId', {
-        templateUrl: 'views/stories/story.html',
+        templateUrl: 'views/stories/story-details.html',
         controller: 'StoryDetailsCtrl'
       })
       .otherwise({

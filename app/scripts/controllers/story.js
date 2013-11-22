@@ -9,7 +9,10 @@ storyControllers.controller('StoryListCtrl', ['$scope', '$http',
     });
   }]);
 
-storyControllers.controller('StoryDetailsCtrl', ['$scope', '$routeParams',
-  function ($scope, $routeParams) {
-    $scope.storyId = $routeParams.storyId;
+storyControllers.controller('StoryDetailsCtrl', 
+  ['$scope', '$http', '$routeParams',
+  function ($scope, $http, $routeParams) {
+    $http.get('/api/stories/' + $routeParams.storyId).success(function(story) {
+      $scope.story = story;
+    });
   }]);

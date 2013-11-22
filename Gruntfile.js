@@ -53,6 +53,7 @@ module.exports = function (grunt) {
       },
       express: {
           files: [
+              '<%= yeoman.app %>/views/{,*//*}*.html',
               '<%= yeoman.app %>/{,*//*}*.html',
               '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
               '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
@@ -242,7 +243,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
+          src: ['*.html', 'views/**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
