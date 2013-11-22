@@ -1,4 +1,44 @@
 'use strict';
+var fixture = [{
+    title: 'My first Story',
+    author: '@kjellski',
+    scenes: [
+      {
+        title: 'Intro',
+        data: undefined
+      }, {
+        title: 'The End',
+        data: undefined
+      }
+    ]
+  }, {
+    title: 'Hotter Fuzzer',
+    author: '@kjellski',
+    scenes: [
+      {
+        title: 'Supercop from London',
+        data: undefined
+      }, {
+        title: 'zombies',
+        data: undefined
+      }, {
+        title: 'Sorry wrong film',
+        data: undefined
+      }
+    ]
+  }, {
+    title: 'My SecondLife',
+    author: '@kjellski',
+    scenes: [
+      {
+        title: 'Starting',
+        data: undefined
+      }, {
+        title: 'Uninstall',
+        data: undefined
+      }
+    ]
+  }];
 
 describe('Controller: MainCtrl', function () {
 
@@ -12,17 +52,19 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/awesomeThings')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);    
+    $httpBackend
+      .expectGET('/api/stories')
+      .respond(fixture);
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings).toBeUndefined();
+  it('should attach a list of stories to the scope', function () {
+    expect(scope.stories).toBeUndefined();
     $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.stories).toBeDefined();
+    expect(scope.stories.length).toBe(3);
   });
 });

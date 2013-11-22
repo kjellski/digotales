@@ -4,7 +4,8 @@ angular.module('digotalesApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'storyControllers'
 ]).config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -12,14 +13,15 @@ angular.module('digotalesApp', [
         controller: 'MainCtrl'
       })
       .when('/stories', {
-        redirectTo: '/'
+        templateUrl: 'views/stories/index.html',
+        controller: 'StoryListCtrl'
       })
-      .when('/stories/:id', {
-        templateUrl: 'views/stories/show.html',
-        controller: 'StoryCtrl'
+      .when('/stories/:storyId', {
+        templateUrl: 'views/stories/story.html',
+        controller: 'StoryDetailsCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/stories'
       });
   });
 
