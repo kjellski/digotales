@@ -42,7 +42,9 @@ app.configure('production', function(){
 });
 
 // Routes
-app.get('/api/awesomeThings', api.awesomeThings);
+//app.get('/api/awesomeThings', api.awesomeThings);
+app.get('/api/stories', api.stories.all);
+app.get('/api/stories/:id', api.stories.findById);
 
 // Start server
 var port = process.env.PORT || 3000;

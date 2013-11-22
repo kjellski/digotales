@@ -1,27 +1,23 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">digotales</h3>
-</div>
+<ng-include src="'views/partials/navigation.html'"></ng-include>
 
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">Always a pleasure scaffolding your apps.</p>
+  <h2>Tell the world your story</h2>
+  <hr/>
+  <div class="row marketing">
+    <div ng-repeat="story in stories">
+        <h4>
+        <a class="" href="#/stories/{{story._id}}">
+          {{story.title}}
+        </a>
+        </h4>
+        <p>{{story.author}}</p>
+    </div>
+  </div>
   <p>
-    <a class="btn btn-lg btn-success" href="#">Splendid!</a>
+    <a class="btn btn-lg btn-success" href="#">Create one yourself!</a>
   </p>
 </div>
 
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
-</div>
-
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <p>♥ from the digotales team</p>
 </div>
