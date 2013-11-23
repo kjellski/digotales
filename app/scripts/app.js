@@ -19,7 +19,11 @@ angular.module('digotalesApp', [
         templateUrl: 'views/story/story-list.html',
         controller: 'StoryListCtrl'
       })
-      .when('/story/:storyTitle', {
+      .when('/story/show/:storyTitle', {
+        templateUrl: 'views/story/story-details.html',
+        controller: 'StoryDetailsCtrl'
+      })
+      .when('/story/new', {
         templateUrl: 'views/story/story-details.html',
         controller: 'StoryDetailsCtrl'
       })
@@ -27,4 +31,3 @@ angular.module('digotalesApp', [
         redirectTo: '/'
       });
   });
-

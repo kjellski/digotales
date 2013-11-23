@@ -1,11 +1,11 @@
 
 <div ng-repeat="story in stories">
-  <div class="media">
+  <div class="media media--spaced">
     <a class="pull-left thumb">
-      <img ng-src="{{story.imageUrl}}">
+      <img data-src="holder.js/64x64" ng-holder />
     </a>
     <div class="media-body">
-      <a href="#/story/{{story.title}}">
+      <a href="#/story/show/{{story.title}}">
         <h4 class="media-heading">{{story.title}}</h4>
       </a>
       {{story.storyline|truncate}}

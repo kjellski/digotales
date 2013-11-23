@@ -1,6 +1,6 @@
 var canvasDirectives = angular.module('directives', []);
 
-canvasDirectives.directive('ngFabricCanvasViewer', function() {
+canvasDirectives.directive('ngCanvasViewer', function() {
   return {
     restrict: 'E',
     transclude: true,
@@ -8,7 +8,7 @@ canvasDirectives.directive('ngFabricCanvasViewer', function() {
   };
 });
 
-canvasDirectives.directive('ngFabricCanvasEditor', function() {
+canvasDirectives.directive('ngCanvasEditor', function() {
   return {
     restrict: 'E',
     template: 'Name: {{customer.name}} Address: {{customer.address}}'
