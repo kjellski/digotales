@@ -6,8 +6,8 @@ angular.module('digotalesApp')
       templateUrl: 'views/directives/asset-category/viewer.html',
       restrict: 'E',
       controller: 'AssetCategoryCtrl',
-      // link: function postLink(scope, element, attrs) {
-        
-      // }
+      link: function postLink(scope, element, attrs) {
+        console.log(element);
+      }
     };
   });
