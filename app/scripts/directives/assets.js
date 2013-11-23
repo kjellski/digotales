@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('digotalesApp')
-  .directive('assets', function () {
+  .directive('ngAssetsViewer', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/directives/assets/viewer.html',
       restrict: 'E',
+      controller: 'AssetsCtrl',
       link: function postLink(scope, element, attrs) {
-        element.text('this is the assets directive');
+        
       }
     };
   });
