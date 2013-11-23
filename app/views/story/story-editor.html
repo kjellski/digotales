@@ -1,9 +1,23 @@
 <div class="row">
-  <div class="col-md-3 bordered">
-    <input ng-model="story.title.type">
+  <div class="input-group">
+    <span class="input-group-addon">Title</span>
+    <input type="text" class="form-control" placeholder="{{story.title}}">
+  </div>
+
+  <div class="input-group">
+    <ng-canvas-editor />
   </div>
   
-  <div class="col-md-9 bordered">
-    <canvas class="canvas bordered"></canvas>
+  <div class="input-group">
+    <span class="input-group-addon">Storyline</span>
+    <textarea type="text" class="form-control form-control--textarea" placeholder="{{story.storyline}}" />
   </div>
+  <hr/>
+  <button type="button" class="btn btn-default btn-md pull-left">
+    <span class="glyphicon glyphicon-trash"></span> Back
+  </button>
+
+  <button type="button" class="btn btn-default btn-md pull-right">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Save
+  </button>
 </div>

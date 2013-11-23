@@ -6,7 +6,7 @@ angular.module('digotalesApp', [
   'ngSanitize',
   'ngRoute',
   'filters',
-  'directives',
+  'canvasDirectives',
   'storyServices',
   'storyControllers',
   'canvasControllers'
@@ -15,6 +15,9 @@ angular.module('digotalesApp', [
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html'
       })
       .when('/story', {
         templateUrl: 'views/story/story-list.html',

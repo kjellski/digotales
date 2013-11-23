@@ -24,10 +24,15 @@ storyControllers.controller('StoryDetailsCtrl',
 
 var NewStory = function(){
   return {
-    title: { type: String, required: true, unique: true },
-    author: { type: String, required: true, unique: false },
-    storyline: { type: String, required: false, unique: false },
-    scenes: [ ]
+    title: 'Shiny title for the story goes here!',
+    author: 'you.',
+    storyline: 'tell us something about the "red line" of your story!',
+    scenes: [
+      {
+        title: 'New Scene',
+        data: undefined
+      }
+    ]
   }
 }
 
