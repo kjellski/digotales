@@ -22,7 +22,6 @@ canvasControllers.controller('CanvasCtrl', function($scope) {
       if (e.preventDefault) {
         e.preventDefault(); // Necessary. Allows us to drop.
       }
-
       e.dataTransfer.dropEffect = 'copy'; 
 
       return false;
@@ -31,10 +30,12 @@ canvasControllers.controller('CanvasCtrl', function($scope) {
     function handleDragEnter(e) {
       // this / e.target is the current hover target.
       this.classList.add('over');
+      console.log('handleDragEnter' + e);
     }
 
     function handleDragLeave(e) {
       this.classList.remove('over'); // this / e.target is previous target element.
+      console.log('handleDragLeave' + e);
     }
 
     function handleDrop(e) {
@@ -49,9 +50,6 @@ canvasControllers.controller('CanvasCtrl', function($scope) {
 
       var img = document.querySelector('.' + assetCategoryContainer + ' img.img-dragging');
 
-      console.log('img:', img);
-      console.log('event: ', e);
-
       var newImage = new fabric.Image(img, {
         width: img.width,
         height: img.height,
@@ -61,7 +59,7 @@ canvasControllers.controller('CanvasCtrl', function($scope) {
         top: e.layerY
       });
       canvas.add(newImage);
-
+      console.log('handleDrop' + e);
       return false;
     }
 
