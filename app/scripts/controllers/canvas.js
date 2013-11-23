@@ -2,9 +2,14 @@
 var canvasControllers = angular.module('canvasControllers', []);
 
 canvasControllers.controller('CanvasCtrl', function ($scope) {
-    //console.log($scope);
-    // figure out how this works with services
-    //$scope.scene = $scope.story.scenes[$scope.story.actualScene];
+    var canvasElement = document.getElementById('canvas');
+    var canvasWidth = 580;
+    var canvasHeight = 400;
 
-    //var canvas = new fabric.Canvas($scope.scene);
+    var canvas = new fabric.Canvas('canvas');
+
+    canvas.setHeight(canvasHeight);
+    canvas.setWidth(canvasWidth);
+
+    console.log(canvas, 'initialized.');
   });

@@ -4,8 +4,13 @@
     <input type="text" class="form-control" placeholder="{{story.title}}">
   </div>
 
-  <div class="input-group">
-    <ng-canvas-editor />
+  <div class="input-group input-group--editor-container">
+    <div class="asset-category-container">
+      <ng-asset-category-viewer></ng-asset-category-viewer>
+    </div>
+    <div class="canvas-editor-container">
+      <ng-canvas-editor></ng-canvas-editor>
+    </div>
   </div>
   
   <div class="input-group">
