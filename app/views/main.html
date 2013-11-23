@@ -1,18 +1,18 @@
 <div class="jumbotron">
-  <h2>Tell the world your story</h2>
+  <h1>Interactive Storytelling</h1>
   <hr/>
   <div class="row marketing">
     <div ng-repeat="story in stories">
-        <h4>
-        <a class="" href="#/stories/{{story._id}}">
-          {{story.title}}
-        </a>
-        </h4>
-        <p>{{story.author}}</p>
+        
+      <a class="" href="#/story/{{story._id}}">
+        {{story.title}} 
+      </a> 
+      /by @{{story.author}}
+      <p>{{story.storyline | truncate}}</p>
     </div>
   </div>
   <p>
-    <a class="btn btn-lg btn-success" href="#/stories/new">Create one yourself!</a>
+    <a class="btn btn-lg btn-success" href="#/story/new">Create one yourself!</a>
   </p>
 </div>
 

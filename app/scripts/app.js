@@ -5,6 +5,7 @@ angular.module('digotalesApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'filters',
   'storyServices',
   'storyControllers'
 ]).config(function ($routeProvider) {
@@ -13,16 +14,16 @@ angular.module('digotalesApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/stories', {
-        templateUrl: 'views/stories/story-list.html',
+      .when('/story', {
+        templateUrl: 'views/story/story-list.html',
         controller: 'StoryListCtrl'
       })
-      .when('/stories/:storyId', {
-        templateUrl: 'views/stories/story-details.html',
+      .when('/story/:storyId', {
+        templateUrl: 'views/story/story-details.html',
         controller: 'StoryDetailsCtrl'
       })
       .otherwise({
-        redirectTo: '/stories'
+        redirectTo: '/'
       });
   });
 
