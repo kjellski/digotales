@@ -41,7 +41,6 @@ var NewStory = function(){
 
 storyControllers.controller('StoryEditorCtrl', ['$scope', 'Story',
   function ($scope, Story) {
-    console.log('Editor');
     $scope.story = NewStory();
   }]);
 

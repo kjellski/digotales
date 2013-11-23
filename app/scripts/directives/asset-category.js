@@ -5,7 +5,7 @@ angular.module('digotalesApp')
     return {
       templateUrl: 'views/directives/asset-category/viewer.html',
       restrict: 'E',
-      controller: 'AssetsCtrl',
+      controller: 'AssetCategoryCtrl',
       // link: function postLink(scope, element, attrs) {
         
       // }

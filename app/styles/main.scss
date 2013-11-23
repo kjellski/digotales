@@ -103,15 +103,35 @@ body {
 }
 
 .canvas {
-    width: 600px;
+    float: left;
+    width: 580px;
     height: 400px;
 }
 
 .media--spaced {
     padding-top: 10px;
-    padding-bottom: 10px;   
+    padding-bottom: 10px;
 }
 
+.asset-image {
+    padding-top: 3px;
+    padding-bottom: 3px;   
+}
+
+// addons, matthiasnotation ;)
 .form-control--textarea {
     min-height: 100px;
+}
+
+.panel-body--smaller {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.panel-group--overflow {
+    float: left;
+    max-width: 147px;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
