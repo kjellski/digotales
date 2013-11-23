@@ -7,6 +7,7 @@ angular.module('digotalesApp', [
   'ngRoute',
   'filters',
   'canvasDirectives',
+  'assetCategoryServices',
   'storyServices',
   'storyControllers',
   'canvasControllers'

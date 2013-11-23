@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: assets', function () {
+describe('Directive: ng-asset-category-viewer', function () {
 
   // load the directive's module
   beforeEach(module('digotalesApp'));
@@ -13,8 +13,6 @@ describe('Directive: assets', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<assets></assets>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the assets directive');
+    
   }));
 });

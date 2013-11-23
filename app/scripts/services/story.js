@@ -1,3 +1,5 @@
+'use strict';
+
 var storyServices = angular.module('storyServices', ['ngResource']);
  
 storyServices.factory('Story', ['$resource',

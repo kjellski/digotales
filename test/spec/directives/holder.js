@@ -8,13 +8,14 @@ describe('Directive: holder', function () {
   var element,
     scope;
 
-  beforeEach(inject(function ($rootScope) {
-    scope = $rootScope.$new();
+  beforeEach(inject(function ($rootScope, $compile) {
+    // scope = $rootScope.$new();
+    // element = angular.element('<img data-src="holder.js/64x64" ng-holder />');
+    // $compile(element)(scope);
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<holder></holder>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the holder directive');
-  }));
+  it('should fill element src with holder data', function () {
+    // expect(element.src).toBeUndefined(); // scope starts undefined
+    // expect(element.src).toBeDefined();
+  });
 });

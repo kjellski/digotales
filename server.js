@@ -45,6 +45,8 @@ var api = require('./lib/controllers/api');
 app.get('/api/story', api.stories.all);
 app.get('/api/story/:id', api.stories.findByTitle);
 
+app.get('/api/asset-category', api.assetCategories.all);
+
 // Start server
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
