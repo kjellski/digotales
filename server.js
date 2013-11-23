@@ -19,9 +19,6 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 // Populate empty DB with dummy data
 require('./lib/db/dummydata');
 
-// Controllers
-var api = require('./lib/controllers/api');
-
 // Express Configuration
 app.configure(function(){
 	app.use(express.logger('dev'));
@@ -41,8 +38,13 @@ app.configure('production', function(){
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
+// Controllers
+var api = require('./lib/controllers/api');
+
 // Routes
-//app.get('/api/awesomeThings', api.awesomeThings);
+app.get('/api/story', api.stories.all);
+app.get('/api/story/:id', api.stories.findById);
+
 app.get('/api/stories', api.stories.all);
 app.get('/api/stories/:id', api.stories.findById);
 

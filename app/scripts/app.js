@@ -5,6 +5,7 @@ angular.module('digotalesApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'storyServices',
   'storyControllers'
 ]).config(function ($routeProvider) {
     $routeProvider
