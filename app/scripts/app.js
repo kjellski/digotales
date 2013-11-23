@@ -8,7 +8,8 @@ angular.module('digotalesApp', [
   'filters',
   'directives',
   'storyServices',
-  'storyControllers'
+  'storyControllers',
+  'canvasControllers'
 ]).config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -24,8 +25,8 @@ angular.module('digotalesApp', [
         controller: 'StoryDetailsCtrl'
       })
       .when('/story/new', {
-        templateUrl: 'views/story/story-details.html',
-        controller: 'StoryDetailsCtrl'
+        templateUrl: 'views/story/story-editor.html',
+        controller: 'StoryEditorCtrl'
       })
       .otherwise({
         redirectTo: '/'

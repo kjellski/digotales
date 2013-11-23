@@ -11,6 +11,7 @@ canvasDirectives.directive('ngCanvasViewer', function() {
 canvasDirectives.directive('ngCanvasEditor', function() {
   return {
     restrict: 'E',
-    template: 'Name: {{customer.name}} Address: {{customer.address}}'
+    //controller: 'CanvasCtrl',
+    template: 'views/partials/canvas.html'
   };
 });
