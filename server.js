@@ -43,10 +43,7 @@ var api = require('./lib/controllers/api');
 
 // Routes
 app.get('/api/story', api.stories.all);
-app.get('/api/story/:id', api.stories.findById);
-
-app.get('/api/stories', api.stories.all);
-app.get('/api/stories/:id', api.stories.findById);
+app.get('/api/story/:id', api.stories.findByTitle);
 
 // Start server
 var port = process.env.PORT || 3000;

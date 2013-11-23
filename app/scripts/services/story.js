@@ -2,7 +2,7 @@ var storyServices = angular.module('storyServices', ['ngResource']);
  
 storyServices.factory('Story', ['$resource',
   function($resource){
-    return $resource('api/story/:storyId', {}, {
+    return $resource('api/story/:storyTitle', {}, {
       all: {
         method:'GET', 
         isArray:true
@@ -10,7 +10,7 @@ storyServices.factory('Story', ['$resource',
       findById: {
         method:'GET', 
         isArray: false,
-        params : { storyId: ':storyId'}
+        params : { storyTitle: ':storyTitle'}
       }
     });
   }]);

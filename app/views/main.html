@@ -4,10 +4,10 @@
   <div class="row marketing">
     <div ng-repeat="story in stories">
         
-      <a class="" href="#/story/{{story._id}}">
+      <a class="" href="#/story/{{story.title}}">
         {{story.title}} 
       </a> 
-      /by @{{story.author}}
+      <small>/by {{story.author}}</small>
       <p>{{story.storyline | truncate}}</p>
     </div>
   </div>

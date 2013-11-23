@@ -6,6 +6,7 @@ angular.module('digotalesApp', [
   'ngSanitize',
   'ngRoute',
   'filters',
+  'directives',
   'storyServices',
   'storyControllers'
 ]).config(function ($routeProvider) {
@@ -18,7 +19,7 @@ angular.module('digotalesApp', [
         templateUrl: 'views/story/story-list.html',
         controller: 'StoryListCtrl'
       })
-      .when('/story/:storyId', {
+      .when('/story/:storyTitle', {
         templateUrl: 'views/story/story-details.html',
         controller: 'StoryDetailsCtrl'
       })

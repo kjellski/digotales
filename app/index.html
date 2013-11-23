@@ -25,10 +25,12 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <ng-include src="'views/partials/navigation.html'"></ng-include>
+    <div class="container">
+        <ng-include src="'views/partials/navigation.html'"></ng-include>
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+        <!-- Add your site or application content here -->
+        <div ng-view=""></div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -69,7 +71,8 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/filters/truncate.js"></script>
+        <script src="scripts/directives/directives.js"></script>
+        <script src="scripts/filters/filters.js"></script>
         <script src="scripts/services/story.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/story.js"></script>

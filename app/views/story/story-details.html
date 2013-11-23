@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col-md-3 bordered">
-    {{story}}
-  </div>
-  
-  <div class="col-md-9 bordered">
-    <canvas class="canvas bordered"></canvas>
+  <blockquote>
+    <p>{{story.title}}</p>
+    {{story.storyline}}
+    <small>/by {{story.author}}</small>
+  </blockquote>
+
+  <div class="bordered jumbotron jumbotron--smaller">
+    <ng-fabric-canvas-viewer />
   </div>
 </div>

@@ -90,6 +90,14 @@ body {
     }
 }
 
+.jumbotron--smaller {
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: auto;
+    padding-right: auto;
+}
+
 .bordered {
     border: 1px solid #e5e5e5;
 }
@@ -98,3 +106,4 @@ body {
     width: 600px;
     height: 400px;
 }
+

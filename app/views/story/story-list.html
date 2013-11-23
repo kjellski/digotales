@@ -5,10 +5,10 @@
       <img ng-src="{{story.imageUrl}}">
     </a>
     <div class="media-body">
-      <a href="#/stories/{{story._id}}">
+      <a href="#/story/{{story.title}}">
         <h4 class="media-heading">{{story.title}}</h4>
       </a>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempsssus viverra turpis. Fusce condimentum nunc ac nisasi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      {{story.storyline|truncate}}
     </div>
   </div>
 </div>

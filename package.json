@@ -1,9 +1,10 @@
 {
   "name": "digotales",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "express": "~3.4.3",
     "mongoose": "~3.5.5",
+    "mongoose-unique-validator": "~0.2.0",
     "async": "~0.2.9"
   },
   "devDependencies": {

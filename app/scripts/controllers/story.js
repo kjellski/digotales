@@ -10,12 +10,13 @@ storyControllers.controller('StoryListCtrl', ['$scope', 'Story',
 storyControllers.controller('StoryDetailsCtrl', 
   ['$scope', '$routeParams', 'Story',
   function ($scope, $routeParams, Story) {
-    console.log($routeParams.storyId);
-
-    if ($routeParams.storyId !== 'new'){
-      
-      $scope.story = Story.get({
-        storyId: $routeParams.storyId
+    
+    if($routeParams.storyTitle !== 'new') {
+      var story = Story.get({
+        storyTitle: $routeParams.storyTitle
       });
+
+      //console.log($routeParams.storyTitle, " --> ", story);
+      $scope.story = story;  
     }
   }]);
