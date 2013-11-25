@@ -7,7 +7,7 @@ canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
     var canvasWidth = 580;
     var canvasHeight = 400;
 
-    console.log($scope);
+    //console.log($scope);
 
     var canvas = new fabric.Canvas('canvas');
 
@@ -21,7 +21,7 @@ canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
 
     $scope.$on('dropImage', function() {
         $scope.droppedImage = ImageDropService.image;
-        console.log('ImageDropService.image', ImageDropService.image);
+        //console.log('ImageDropService.image', ImageDropService.image);
     });
 
     $scope.updateDrapAndDropHandler = function updateDrapAndDropHandler() { //assetCategoryContainer, canvas) {
