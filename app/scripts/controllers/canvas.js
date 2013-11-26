@@ -3,13 +3,13 @@ var canvasControllers = angular.module('canvasControllers', []);
 
 canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
   function($scope, ImageDropService) {
-    var canvasElement = document.getElementById('canvas');
+    var canvasElement = document.getElementById('canvas-id');
     var canvasWidth = 580;
     var canvasHeight = 400;
 
     //console.log($scope);
 
-    var canvas = new fabric.Canvas('canvas');
+    var canvas = new fabric.Canvas('canvas-id');
 
     canvas.setHeight(canvasHeight);
     canvas.setWidth(canvasWidth);
