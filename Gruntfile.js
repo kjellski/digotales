@@ -57,7 +57,7 @@ module.exports = function (grunt) {
               '<%= yeoman.app %>/{,*//*}*.html',
               '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
               '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
-              '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
+              '<%= yeoman.app %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
               'server.js',
               'lib/{,*//*}*.{js,json}'
           ],
@@ -175,7 +175,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            '<%= yeoman.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
         }
@@ -260,7 +260,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'images/{,*/}*.{gif,webp}',
+            'images/**/*.{gif,webp}',
             'fonts/*'
           ]
         }, {
@@ -386,7 +386,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'rev',
+//    'rev',
     'usemin'
   ]);
 
