@@ -10,8 +10,9 @@ angular.module('digotalesApp', [
   'assetCategoryServices',
   'imageDropServices',
   'storyServices',
+  'canvasControllers',
+  'CanvasDataServices',
   'storyControllers',
-  'canvasControllers'
 ]).config(function($routeProvider) {
   $routeProvider
     .when('/', {

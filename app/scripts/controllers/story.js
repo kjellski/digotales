@@ -3,15 +3,15 @@
 var storyControllers = angular.module('storyControllers', [])
 
 storyControllers.controller('StoryListCtrl', ['$scope', 'Story',
-  function ($scope, Story) {
+  function($scope, Story) {
     $scope.stories = Story.all();
-  }]);
+  }
+]);
 
-storyControllers.controller('StoryDetailsCtrl', 
-  ['$scope', '$routeParams', 'Story',
-  function ($scope, $routeParams, Story) {
+storyControllers.controller('StoryDetailsCtrl', ['$scope', '$routeParams', 'Story',
+  function($scope, $routeParams, Story) {
     console.log('showing: ', $routeParams.storyTitle);
-    if ($routeParams.storyTitle === 'new' || $routeParams.storyTitle === undefined) 
+    if ($routeParams.storyTitle === 'new' || $routeParams.storyTitle === undefined)
       return;
 
     var story = Story.get({
@@ -19,28 +19,35 @@ storyControllers.controller('StoryDetailsCtrl',
     });
 
     //console.log($routeParams.storyTitle, " --> ", story);
-    $scope.story = story;  
-  }]);
+    $scope.story = story;
+  }
+]);
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
-var NewStory = function(){
+var NewStory = function() {
   return {
     title: 'Shiny title for the story goes here!',
     author: 'you.',
     storyline: 'tell us something about the "red line" of your story!',
-    scenes: [
-      {
-        title: 'New Scene',
-        data: undefined
-      }
-    ]
+    scenes: [{
+      title: 'New Scene',
+      data: undefined
+    }]
   }
 }
 
-storyControllers.controller('StoryEditorCtrl', ['$scope', 'Story',
-  function ($scope, Story) {
+storyControllers.controller('StoryEditorCtrl', ['$rootScope', '$scope', 'Story', 'CanvasDataService',
+  function($rootScope, $scope, Story, CanvasDataService) {
     $scope.story = NewStory();
-  }]);
 
+    $scope.save = function() {
+      CanvasDataService.requestCanvasJSON().then(
+        function(json) {
+          $scope.story.json = json;
+        }
+      );
+    }
+  }
+]);

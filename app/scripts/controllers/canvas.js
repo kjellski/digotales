@@ -1,8 +1,8 @@
 'use strict';
 var canvasControllers = angular.module('canvasControllers', []);
 
-canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
-  function($scope, ImageDropService) {
+canvasControllers.controller('CanvasCtrl', ['$scope', '$rootScope', 'ImageDropService', 'CanvasDataService',
+  function($scope, $rootScope, ImageDropService, CanvasDataService) {
     var canvasElement = document.getElementById('canvas-id');
     var canvasWidth = 580;
     var canvasHeight = 400;
@@ -19,12 +19,30 @@ canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
     var assetCategoryContainer = 'asset-category-container';
     var canvasEventHandlerAdded = false;
 
-    $scope.$on('dropImage', function() {
-        $scope.droppedImage = ImageDropService.image;
-        //console.log('ImageDropService.image', ImageDropService.image);
+    $rootScope.$on('dropImage', function() {
+      console.log('droppedImage');
+      $scope.droppedImage = ImageDropService.image;
+      $scope.addImage();
     });
 
-    $scope.updateDrapAndDropHandler = function updateDrapAndDropHandler() { //assetCategoryContainer, canvas) {
+    $rootScope.$on('requestCanvasJSON', function() {
+      console.log('requestedCanvasJSON')
+      CanvasDataService.responseCanvasJSON($scope.canvas.toJSON());
+    });
+
+    $scope.addImage = function(img, e) {
+      var newImage = new fabric.Image(img, {
+        width: img.width,
+        height: img.height,
+        // Set the center of the new object based on the event coordinates relative
+        // to the canvas container.
+        left: e.layerX,
+        top: e.layerY
+      });
+      $scope.canvas.add(newImage);
+    }
+
+    $scope.updateDrapAndDropHandler = function() {
 
       function handleDragOver(e) {
         if (e.preventDefault) {
@@ -36,19 +54,14 @@ canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
       }
 
       function handleDragEnter(e) {
-        // this / e.target is the current hover target.
         this.classList.add('over');
-        //console.log('handleDragEnter' + e);
       }
 
       function handleDragLeave(e) {
-        this.classList.remove('over'); // this / e.target is previous target element.
-        //console.log('handleDragLeave' + e);
+        this.classList.remove('over');
       }
 
       function handleDrop(e) {
-        // this / e.target is current target element.
-
         if (e.preventDefault) {
           e.preventDefault();
         }
@@ -57,23 +70,12 @@ canvasControllers.controller('CanvasCtrl', ['$scope', 'ImageDropService',
         }
 
         var img = document.querySelector('.' + assetCategoryContainer + ' img.img-dragging');
+        $scope.addImage(img, e);
 
-        var newImage = new fabric.Image(img, {
-          width: img.width,
-          height: img.height,
-          // Set the center of the new object based on the event coordinates relative
-          // to the canvas container.
-          left: e.layerX,
-          top: e.layerY
-        });
-        canvas.add(newImage);
-        //console.log('handleDrop' + e);
         return false;
       }
 
       if (Modernizr.draganddrop) {
-        // Browser supports HTML5 DnD.
-
         // Bind the event listeners for the canvas
         if (!canvasEventHandlerAdded) {
           var canvasContainer = document.getElementById('canvas-container');

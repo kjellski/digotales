@@ -4,15 +4,16 @@ var imageDropServices = angular.module('imageDropServices', []);
 imageDropServices.service('ImageDropService', function($rootScope) {
   var imageDropService = {};
   
-  imageDropService.image = undefined;
+  imageDropService.droppingImage = undefined;
 
-  imageDropService.prepareDropImage = function(image) {
-    this.image = image;
+  imageDropService.prepareDropImage = function(droppingImage) {
+    console.log('dropping');
+    this.droppingImage = droppingImage;
     this.dropImage();
   };
 
   imageDropService.dropImage = function() {
-    $rootScope.$broadcast('dropImage');
+    $rootScope.$emit('dropImage');
   };
 
   return imageDropService;
